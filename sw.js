@@ -1,5 +1,5 @@
 // Gerado por build/pwa.ps1
-const CACHE = 'calc-notas-A3B10904B92F';
+const CACHE = 'calc-notas-BC68571FCF85';
 const ARQUIVOS = ['./', 'index.html', 'manifest.webmanifest', 'icones/icone-192.png', 'icones/icone-512.png', 'icones/icone-maskable-512.png', 'icones/apple-touch-icon.png'];
 
 self.addEventListener('install', (e) => {

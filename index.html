@@ -74,7 +74,7 @@ Minhas Matérias
 <svg class="w-5 h-5 text-blue-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
 </svg>
-<input id="nome-materia" type="text" maxlength="50" placeholder="Nome da matéria" aria-label="Nome da matéria" title="Clique para renomear a matéria"
+<input id="nome-materia" type="text" maxlength="50" placeholder="Nome da disciplina" aria-label="Nome da disciplina" title="Clique para renomear a matéria"
 class="flex-1 min-w-0 text-lg font-semibold text-slate-900 bg-transparent border-b border-dashed border-slate-300 hover:border-slate-400 focus:border-blue-600 focus:outline-none py-0.5 transition-colors">
 <button id="btn-excluir-materia" type="button" title="Excluir matéria" aria-label="Excluir matéria" class="p-2 rounded-lg text-slate-400 hover:bg-red-50 hover:text-red-600 transition-colors">
 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
@@ -350,7 +350,7 @@ let proximoId = 1;
 const novaAvaliacao = (nome, tipo, peso = '1', nota = '') => ({ id: proximoId++, nome, tipo, peso, nota });
 const avaliacoesPadrao = () => [novaAvaliacao('Prova 1', 'Prova'), novaAvaliacao('Prova 2', 'Prova'), novaAvaliacao('Trabalho 1', 'Trabalho')];
 const novaMateria = (nome, avaliacoes = avaliacoesPadrao()) => ({ id: proximoId++, nome, avaliacoes });
-const NOME_PADRAO = 'Nome da matéria';
+const NOME_PADRAO = 'Nome da disciplina';
 let estado = { aba: 'semestre', materias: [novaMateria(NOME_PADRAO)], materiaAtual: null, mp: '', ne: '' };
 estado.materiaAtual = estado.materias[0].id;
 const materia = () => estado.materias.find((m) => m.id === estado.materiaAtual) || estado.materias[0];
