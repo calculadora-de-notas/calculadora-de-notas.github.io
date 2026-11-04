@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Notas</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%23172554'/%3E%3Cg transform='translate(2.4 2.4) scale(.8)' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round'%3E%3Crect x='4.5' y='2' width='15' height='20' rx='3'/%3E%3Crect x='7' y='4.8' width='10' height='3.4' rx='1'/%3E%3Crect x='7' y='10.6' width='4' height='4' rx='1'/%3E%3Crect x='13' y='10.6' width='4' height='4' rx='1'/%3E%3Crect x='7' y='16' width='4' height='4' rx='1'/%3E%3Crect x='13' y='16' width='4' height='4' rx='1'/%3E%3C/g%3E%3C/svg%3E">
+<style>*,::before,::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x:;--tw-pan-y:;--tw-pinch-zoom:;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position:;--tw-gradient-via-position:;--tw-gradient-to-position:;--tw-ordinal:;--tw-slashed-zero:;--tw-numeric-figure:;--tw-numeric-spacing:;--tw-numeric-fraction:;--tw-ring-inset:;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur:;--tw-brightness:;--tw-contrast:;--tw-grayscale:;--tw-hue-rotate:;--tw-invert:;--tw-saturate:;--tw-sepia:;--tw-drop-shadow:;--tw-backdrop-blur:;--tw-backdrop-brightness:;--tw-backdrop-contrast:;--tw-backdrop-grayscale:;--tw-backdrop-hue-rotate:;--tw-backdrop-invert:;--tw-backdrop-opacity:;--tw-backdrop-saturate:;--tw-backdrop-sepia:;--tw-contain-size:;--tw-contain-layout:;--tw-contain-paint:;--tw-contain-style:}::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x:;--tw-pan-y:;--tw-pinch-zoom:;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position:;--tw-gradient-via-position:;--tw-gradient-to-position:;--tw-ordinal:;--tw-slashed-zero:;--tw-numeric-figure:;--tw-numeric-spacing:;--tw-numeric-fraction:;--tw-ring-inset:;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur:;--tw-brightness:;--tw-contrast:;--tw-grayscale:;--tw-hue-rotate:;--tw-invert:;--tw-saturate:;--tw-sepia:;--tw-drop-shadow:;--tw-backdrop-blur:;--tw-backdrop-brightness:;--tw-backdrop-contrast:;--tw-backdrop-grayscale:;--tw-backdrop-hue-rotate:;--tw-backdrop-invert:;--tw-backdrop-opacity:;--tw-backdrop-saturate:;--tw-backdrop-sepia:;--tw-contain-size:;--tw-contain-layout:;--tw-contain-paint:;--tw-contain-style:}*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.absolute{position:absolute}.relative{position:relative}.inset-y-0{top:0px;bottom:0px}.right-0{right:0px}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.mt-auto{margin-top:auto}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-16{height:4rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-8{height:2rem}.h-9{height:2.25rem}.min-h-\[360px\]{min-height:360px}.min-h-screen{min-height:100vh}.w-14{width:3.5rem}.w-16{width:4rem}.w-28{width:7rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-8{width:2rem}.w-\[4\.5rem\]{width:4.5rem}.w-full{width:100%}.min-w-0{min-width:0px}.max-w-5xl{max-width:64rem}.max-w-\[180px\]{max-width:180px}.max-w-xs{max-width:20rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.flex-grow{flex-grow:1}.cursor-not-allowed{cursor:not-allowed}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem * var(--tw-space-y-reverse))}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.whitespace-nowrap{white-space:nowrap}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-dashed{border-style:dashed}.border-amber-200{--tw-border-opacity:1;border-color:rgb(253 230 138 / var(--tw-border-opacity,1))}.border-amber-300{--tw-border-opacity:1;border-color:rgb(252 211 77 / var(--tw-border-opacity,1))}.border-blue-200{--tw-border-opacity:1;border-color:rgb(191 219 254 / var(--tw-border-opacity,1))}.border-blue-300{--tw-border-opacity:1;border-color:rgb(147 197 253 / var(--tw-border-opacity,1))}.border-blue-900{--tw-border-opacity:1;border-color:rgb(30 58 138 / var(--tw-border-opacity,1))}.border-emerald-200{--tw-border-opacity:1;border-color:rgb(167 243 208 / var(--tw-border-opacity,1))}.border-emerald-300{--tw-border-opacity:1;border-color:rgb(110 231 183 / var(--tw-border-opacity,1))}.border-red-200{--tw-border-opacity:1;border-color:rgb(254 202 202 / var(--tw-border-opacity,1))}.border-red-300{--tw-border-opacity:1;border-color:rgb(252 165 165 / var(--tw-border-opacity,1))}.border-red-400{--tw-border-opacity:1;border-color:rgb(248 113 113 / var(--tw-border-opacity,1))}.border-rose-200{--tw-border-opacity:1;border-color:rgb(254 205 211 / var(--tw-border-opacity,1))}.border-rose-300{--tw-border-opacity:1;border-color:rgb(253 164 175 / var(--tw-border-opacity,1))}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249 / var(--tw-border-opacity,1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity,1))}.border-slate-300{--tw-border-opacity:1;border-color:rgb(203 213 225 / var(--tw-border-opacity,1))}.border-white\/20{border-color:rgb(255 255 255 / 0.2)}.bg-amber-100{--tw-bg-opacity:1;background-color:rgb(254 243 199 / var(--tw-bg-opacity,1))}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235 / var(--tw-bg-opacity,1))}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity,1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity,1))}.bg-blue-900{--tw-bg-opacity:1;background-color:rgb(30 58 138 / var(--tw-bg-opacity,1))}.bg-emerald-100{--tw-bg-opacity:1;background-color:rgb(209 250 229 / var(--tw-bg-opacity,1))}.bg-emerald-50{--tw-bg-opacity:1;background-color:rgb(236 253 245 / var(--tw-bg-opacity,1))}.bg-red-100{--tw-bg-opacity:1;background-color:rgb(254 226 226 / var(--tw-bg-opacity,1))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity,1))}.bg-rose-100{--tw-bg-opacity:1;background-color:rgb(255 228 230 / var(--tw-bg-opacity,1))}.bg-rose-50{--tw-bg-opacity:1;background-color:rgb(255 241 242 / var(--tw-bg-opacity,1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity,1))}.bg-slate-200{--tw-bg-opacity:1;background-color:rgb(226 232 240 / var(--tw-bg-opacity,1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity,1))}.bg-transparent{background-color:transparent}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity,1))}.bg-white\/10{background-color:rgb(255 255 255 / 0.1)}.bg-white\/15{background-color:rgb(255 255 255 / 0.15)}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-2\.5{padding:0.625rem}.p-3\.5{padding:0.875rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}.px-4{padding-left:1rem;padding-right:1rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.py-8{padding-top:2rem;padding-bottom:2rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.pl-4{padding-left:1rem}.pr-12{padding-right:3rem}.pr-4{padding-right:1rem}.pt-2{padding-top:0.5rem}.pt-4{padding-top:1rem}.text-center{text-align:center}.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-normal{font-weight:400}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-0.025em}.tracking-wide{letter-spacing:0.025em}.tracking-wider{letter-spacing:0.05em}.text-amber-700{--tw-text-opacity:1;color:rgb(180 83 9 / var(--tw-text-opacity,1))}.text-amber-800{--tw-text-opacity:1;color:rgb(146 64 14 / var(--tw-text-opacity,1))}.text-blue-100{--tw-text-opacity:1;color:rgb(219 234 254 / var(--tw-text-opacity,1))}.text-blue-200{--tw-text-opacity:1;color:rgb(191 219 254 / var(--tw-text-opacity,1))}.text-blue-700{--tw-text-opacity:1;color:rgb(29 78 216 / var(--tw-text-opacity,1))}.text-blue-800{--tw-text-opacity:1;color:rgb(30 64 175 / var(--tw-text-opacity,1))}.text-blue-900{--tw-text-opacity:1;color:rgb(30 58 138 / var(--tw-text-opacity,1))}.text-emerald-600{--tw-text-opacity:1;color:rgb(5 150 105 / var(--tw-text-opacity,1))}.text-emerald-800{--tw-text-opacity:1;color:rgb(6 95 70 / var(--tw-text-opacity,1))}.text-red-500{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity,1))}.text-red-600{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity,1))}.text-red-800{--tw-text-opacity:1;color:rgb(153 27 27 / var(--tw-text-opacity,1))}.text-rose-800{--tw-text-opacity:1;color:rgb(159 18 57 / var(--tw-text-opacity,1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity,1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity,1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity,1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity,1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity,1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity,1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity,1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-40{opacity:0.4}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1),0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.transition-colors{transition-property:color,background-color,border-color,fill,stroke,-webkit-text-decoration-color;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,-webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4,0,0.2,1);transition-duration:150ms}.selection\:bg-blue-600 *::selection{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity,1))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity,1))}.selection\:bg-blue-600::selection{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity,1))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity,1))}.hover\:border-blue-300:hover{--tw-border-opacity:1;border-color:rgb(147 197 253 / var(--tw-border-opacity,1))}.hover\:border-blue-400:hover{--tw-border-opacity:1;border-color:rgb(96 165 250 / var(--tw-border-opacity,1))}.hover\:border-slate-400:hover{--tw-border-opacity:1;border-color:rgb(148 163 184 / var(--tw-border-opacity,1))}.hover\:bg-blue-100:hover{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity,1))}.hover\:bg-blue-50:hover{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity,1))}.hover\:bg-blue-800:hover{--tw-bg-opacity:1;background-color:rgb(30 64 175 / var(--tw-bg-opacity,1))}.hover\:bg-red-50:hover{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity,1))}.hover\:bg-slate-100:hover{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity,1))}.hover\:bg-slate-200:hover{--tw-bg-opacity:1;background-color:rgb(226 232 240 / var(--tw-bg-opacity,1))}.hover\:text-blue-700:hover{--tw-text-opacity:1;color:rgb(29 78 216 / var(--tw-text-opacity,1))}.hover\:text-red-600:hover{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity,1))}.hover\:text-slate-900:hover{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity,1))}.focus\:border-blue-600:focus{--tw-border-opacity:1;border-color:rgb(37 99 235 / var(--tw-border-opacity,1))}.focus\:border-transparent:focus{border-color:transparent}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000)}.focus\:ring-blue-300:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(147 197 253 / var(--tw-ring-opacity,1))}.focus\:ring-blue-400:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(96 165 250 / var(--tw-ring-opacity,1))}.focus\:ring-blue-600:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(37 99 235 / var(--tw-ring-opacity,1))}.focus\:ring-red-400:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(248 113 113 / var(--tw-ring-opacity,1))}.focus\:ring-slate-300:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(203 213 225 / var(--tw-ring-opacity,1))}@media (min-width: 480px){.min-\[480px\]\:flex{display:flex}.min-\[480px\]\:w-28{width:7rem}.min-\[480px\]\:w-auto{width:auto}.min-\[480px\]\:flex-1{flex:1 1 0%}.min-\[480px\]\:flex-none{flex:none}.min-\[480px\]\:flex-nowrap{flex-wrap:nowrap}.min-\[480px\]\:space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}}@media (min-width: 640px){.sm\:block{display:block}.sm\:p-5{padding:1.25rem}.sm\:p-7{padding:1.75rem}.sm\:px-4{padding-left:1rem;padding-right:1rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}}@media (min-width: 960px){.min-\[960px\]\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+body {
+font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+</style>
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="apple-touch-icon" href="icones/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Calc. Notas">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between antialiased selection:bg-blue-600 selection:text-white">
+<header class="bg-blue-900 text-white shadow-md">
+<div class="max-w-5xl mx-auto px-4 py-5 flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="bg-white/10 p-2 rounded-xl border border-white/20">
+<svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+<rect x="4.5" y="2" width="15" height="20" rx="3" />
+<rect x="7" y="4.8" width="10" height="3.4" rx="1" />
+<rect x="7" y="10.6" width="4" height="4" rx="1" /><rect x="13" y="10.6" width="4" height="4" rx="1" />
+<rect x="7" y="16" width="4" height="4" rx="1" /><rect x="13" y="16" width="4" height="4" rx="1" />
+<path stroke-width="1.1" d="M8.2 12.6h1.6M9 11.8v1.6M14.2 12.6h1.6M8.4 17.4l1.2 1.2M9.6 17.4l-1.2 1.2M14.2 17.6h1.6M14.2 18.4h1.6" />
+</svg>
+</div>
+<div>
+<h1 class="text-xl font-bold tracking-tight leading-tight">Calculadora de Notas</h1>
+<p class="text-xs text-blue-200">Média do semestre e exame final</p>
+</div>
+</div>
+<button id="btn-instalar" type="button" class="hidden items-center gap-2 text-xs font-semibold bg-white text-blue-900 hover:bg-blue-50 px-3.5 py-2 rounded-full shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+Instalar aplicativo
+</button>
+</div>
+</header>
+<main class="max-w-5xl w-full mx-auto px-4 py-8 flex-grow">
+<div class="bg-white p-1 rounded-2xl border border-slate-200 shadow-sm flex gap-1 mb-6" role="tablist">
+<button type="button" role="tab" data-aba="semestre" class="aba-btn flex-1 whitespace-nowrap py-2.5 px-2 sm:px-4 rounded-xl text-sm font-semibold transition-colors flex items-center justify-center gap-2">
+<svg class="hidden sm:block w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+</svg>
+Média do Semestre
+</button>
+<button type="button" role="tab" data-aba="exame" class="aba-btn flex-1 whitespace-nowrap py-2.5 px-2 sm:px-4 rounded-xl text-sm font-semibold transition-colors flex items-center justify-center gap-2">
+<svg class="hidden sm:block w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+</svg>
+Exame Final
+</button>
+</div>
+<section id="aba-semestre" role="tabpanel">
+<div class="bg-white p-4 sm:p-5 rounded-2xl shadow-sm border border-slate-200 mb-6">
+<div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+<h2 class="text-sm font-bold uppercase tracking-wider text-slate-900 flex items-center gap-2">
+<svg class="w-4 h-4 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+</svg>
+Minhas Matérias
+</h2>
+<span id="status-salvo" class="text-xs text-emerald-600">✓ Salvo automaticamente</span>
+</div>
+<div id="lista-materias" class="flex flex-wrap gap-2"></div>
+</div>
+<div class="grid grid-cols-1 min-[960px]:grid-cols-2 gap-6">
+<div class="bg-white p-6 sm:p-7 rounded-2xl shadow-sm border border-slate-200 flex flex-col">
+<div class="flex items-center gap-2 mb-1">
+<svg class="w-5 h-5 text-blue-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+</svg>
+<input id="nome-materia" type="text" maxlength="50" placeholder="Nome da matéria" aria-label="Nome da matéria" title="Clique para renomear a matéria"
+class="flex-1 min-w-0 text-lg font-semibold text-slate-900 bg-transparent border-b border-dashed border-slate-300 hover:border-slate-400 focus:border-blue-600 focus:outline-none py-0.5 transition-colors">
+<button id="btn-excluir-materia" type="button" title="Excluir matéria" aria-label="Excluir matéria" class="p-2 rounded-lg text-slate-400 hover:bg-red-50 hover:text-red-600 transition-colors">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+</button>
+</div>
+<p class="text-xs text-slate-500 mb-5">Clique no nome para renomear a matéria. Lance as notas que você já tem e deixe em branco as avaliações que ainda vão acontecer: a calculadora mostra quanto você precisa tirar nelas.</p>
+<div class="hidden min-[480px]:flex gap-2 px-1 mb-2 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+<span class="flex-1">Avaliação</span>
+<span class="w-28">Tipo</span>
+<span class="w-14 text-center" title="Peso da avaliação na média. Use 1 em todas para média simples.">Peso</span>
+<span class="w-[4.5rem] text-center">Nota</span>
+<span class="w-8"></span>
+</div>
+<div id="lista-avaliacoes" class="space-y-3 min-[480px]:space-y-2"></div>
+<div class="flex flex-wrap gap-2 mt-4 mb-6">
+<button id="btn-add-prova" type="button" class="flex-1 whitespace-nowrap py-2.5 px-3 bg-blue-50 hover:bg-blue-100 text-blue-800 text-sm font-medium rounded-xl border border-blue-200 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300 flex items-center justify-center gap-1.5">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
+Prova
+</button>
+<button id="btn-add-trabalho" type="button" class="flex-1 whitespace-nowrap py-2.5 px-3 bg-blue-50 hover:bg-blue-100 text-blue-800 text-sm font-medium rounded-xl border border-blue-200 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300 flex items-center justify-center gap-1.5">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
+Trabalho
+</button>
+<button id="btn-limpar-notas" type="button" class="flex-1 whitespace-nowrap py-2.5 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-medium rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-slate-300 flex items-center justify-center gap-1.5">
+<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+Limpar notas
+</button>
+</div>
+<p class="text-xs text-slate-400 mt-auto pt-4 border-t border-slate-100">Dica: deixe peso 1 em todas para média simples. Aceita vírgula ou ponto (ex.: 7,5).</p>
+</div>
+<div class="bg-white p-6 sm:p-7 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between min-h-[360px]">
+<div>
+<h2 class="text-lg font-semibold text-slate-900 mb-1 flex items-center gap-2">
+<svg class="w-5 h-5 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+</svg>
+Resultado
+</h2>
+<p class="text-xs text-slate-500 mb-6">Atualizado conforme você digita.</p>
+<div id="sem-vazio" class="py-12 flex flex-col items-center justify-center text-center">
+<div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-3 text-slate-400">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+</svg>
+</div>
+<p class="text-sm font-medium text-slate-600">Aguardando dados</p>
+<p class="text-xs text-slate-400 max-w-xs mt-1">Adicione ao menos uma avaliação para ver sua média.</p>
+</div>
+<div id="sem-conteudo" class="hidden space-y-5">
+<div class="flex items-center justify-between">
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Situação</span>
+<span id="sem-badge" class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">--</span>
+</div>
+<div class="bg-slate-50 border border-slate-200 rounded-xl p-5 text-center">
+<span id="sem-destaque-titulo" class="text-xs font-medium text-slate-500 uppercase tracking-wide block mb-1">--</span>
+<div id="sem-destaque-valor" class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">--</div>
+<span id="sem-destaque-sub" class="text-xs text-slate-500 mt-2 block">--</span>
+</div>
+<dl class="grid grid-cols-3 gap-2 text-center">
+<div class="bg-slate-50 border border-slate-100 rounded-xl p-2.5">
+<dt class="text-[11px] text-slate-400 leading-tight">Média atual</dt>
+<dd id="sem-stat-atual" class="text-base font-bold text-slate-800 mt-0.5">—</dd>
+</div>
+<div class="bg-slate-50 border border-slate-100 rounded-xl p-2.5">
+<dt class="text-[11px] text-slate-400 leading-tight">Lançadas</dt>
+<dd id="sem-stat-lancadas" class="text-base font-bold text-slate-800 mt-0.5">—</dd>
+</div>
+<div class="bg-slate-50 border border-slate-100 rounded-xl p-2.5">
+<dt class="text-[11px] text-slate-400 leading-tight">Máx. possível</dt>
+<dd id="sem-stat-max" class="text-base font-bold text-slate-800 mt-0.5">—</dd>
+</div>
+</dl>
+<div id="sem-alerta" class="p-4 rounded-xl text-xs sm:text-sm leading-relaxed border"></div>
+<button id="btn-ir-exame" type="button" class="hidden w-full py-2.5 px-4 bg-blue-900 hover:bg-blue-800 text-white text-sm font-semibold rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 flex items-center justify-center gap-2">
+Calcular nota necessária no Exame
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+</button>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-slate-100 text-xs text-slate-400 flex justify-between items-center">
+<span>Aprovação direta: <strong>7.0</strong></span>
+<span>Abaixo de 7.0: <strong>Exame</strong></span>
+</div>
+</div>
+</div>
+<div class="mt-8 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+<h3 class="text-sm font-bold text-slate-900 mb-3 uppercase tracking-wider flex items-center gap-2">
+<svg class="w-4 h-4 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+</svg>
+Como a média do semestre é calculada
+</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-600">
+<div class="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+<span class="font-semibold text-slate-800 block mb-1">1. Média Parcial (MP)</span>
+Média ponderada de todas as avaliações:<br>
+<code class="bg-slate-200 px-1 py-0.5 rounded text-slate-800 font-mono text-[11px] mt-1 inline-block">MP = Σ(nota × peso) / Σ(peso)</code><br>
+Com peso 1 em todas, é a média simples.
+</div>
+<div class="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+<span class="font-semibold text-slate-800 block mb-1">2. Nota Necessária</span>
+Para as avaliações sem nota, calcula a nota (igual em todas) que leva sua MP exatamente a <strong>7,0</strong>. Se tirar mais em uma, pode tirar menos em outra.
+</div>
+<div class="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+<span class="font-semibold text-slate-800 block mb-1">3. Resultado</span>
+Com <strong>MP ≥ 7,0</strong> você é aprovado direto. Abaixo disso, vai para o Exame Final: use o botão para levar sua MP para a aba do exame.
+</div>
+</div>
+<p class="text-[11px] text-slate-400 mt-3">Os pesos de cada avaliação são definidos no plano de ensino de cada disciplina. Confira com o professor.</p>
+</div>
+</section>
+<section id="aba-exame" role="tabpanel" class="hidden">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-white p-6 sm:p-7 rounded-2xl shadow-sm border border-slate-200">
+<h2 class="text-lg font-semibold text-slate-900 mb-1 flex items-center gap-2">
+<svg class="w-5 h-5 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+</svg>
+Inserir Notas
+</h2>
+<p class="text-xs text-slate-500 mb-6">Digite sua Média Parcial e a Nota do Exame para simular seu resultado.</p>
+<div class="space-y-5">
+<div>
+<label for="mp" class="block text-sm font-medium text-slate-700 mb-1">
+Média Parcial (MP) <span class="text-red-500">*</span>
+</label>
+<div class="relative rounded-xl shadow-sm">
+<input type="text" inputmode="decimal" autocomplete="off" id="mp" placeholder="Ex: 5,5"
+class="campo-nota w-full pl-4 pr-12 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-slate-900 text-base transition-colors">
+<div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-slate-400 font-medium text-sm">/ 10</div>
+</div>
+<p class="text-xs text-slate-400 mt-1">Média obtida no semestre antes do exame.</p>
+</div>
+<div>
+<label for="ne" class="block text-sm font-medium text-slate-700 mb-1">
+Nota do Exame Final (NE) <span class="text-xs text-slate-400 font-normal">(Opcional)</span>
+</label>
+<div class="relative rounded-xl shadow-sm">
+<input type="text" inputmode="decimal" autocomplete="off" id="ne" placeholder="Ex: 6,0"
+class="campo-nota w-full pl-4 pr-12 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-slate-900 text-base transition-colors">
+<div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-slate-400 font-medium text-sm">/ 10</div>
+</div>
+<p class="text-xs text-slate-400 mt-1">Deixe em branco para calcular a nota mínima necessária.</p>
+</div>
+<div class="pt-2">
+<button id="btn-limpar" type="button" class="w-full py-2.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-medium rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-slate-300 flex items-center justify-center gap-2">
+<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+</svg>
+Limpar Campos
+</button>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 sm:p-7 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between min-h-[360px]">
+<div>
+<h2 class="text-lg font-semibold text-slate-900 mb-1 flex items-center gap-2">
+<svg class="w-5 h-5 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+</svg>
+Resultado
+</h2>
+<p class="text-xs text-slate-500 mb-6">Status atualizado conforme você digita.</p>
+<div id="resultado-vazio" class="py-12 flex flex-col items-center justify-center text-center">
+<div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-3 text-slate-400">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+</svg>
+</div>
+<p id="resultado-vazio-titulo" class="text-sm font-medium text-slate-600">Aguardando dados</p>
+<p id="resultado-vazio-texto" class="text-xs text-slate-400 max-w-xs mt-1">Preencha ao menos a Média Parcial (MP) para visualizar seu status e simulador.</p>
+</div>
+<div id="resultado-conteudo" class="hidden space-y-5">
+<div class="flex items-center justify-between">
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Situação</span>
+<span id="badge-status" class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">--</span>
+</div>
+<div class="bg-slate-50 border border-slate-200 rounded-xl p-5 text-center">
+<span id="titulo-nota-destaque" class="text-xs font-medium text-slate-500 uppercase tracking-wide block mb-1">Média Final (MF)</span>
+<div id="valor-nota-destaque" class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">0,00</div>
+<span id="subtexto-nota-destaque" class="text-xs text-slate-500 mt-2 block">Peso: 60% MP + 40% NE</span>
+</div>
+<div id="alerta-mensagem" class="p-4 rounded-xl text-xs sm:text-sm leading-relaxed border"></div>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-slate-100 text-xs text-slate-400 flex justify-between items-center">
+<span>MF mín. aprovação: <strong>6.0</strong></span>
+<span>Piso Exame: <strong>4.0</strong></span>
+</div>
+</div>
+</div>
+<div class="mt-8 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+<h3 class="text-sm font-bold text-slate-900 mb-3 uppercase tracking-wider flex items-center gap-2">
+<svg class="w-4 h-4 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+</svg>
+Regras de Aprovação
+</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-600">
+<div class="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+<span class="font-semibold text-slate-800 block mb-1">1. Aprovação Direta</span>
+Se a Média Parcial (MP) for igual ou superior a <strong>7,0</strong>, o estudante está aprovado diretamente sem necessidade de realizar Exame Final.
+</div>
+<div class="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+<span class="font-semibold text-slate-800 block mb-1">2. Piso Mínimo do Exame</span>
+É obrigatório tirar nota igual ou maior a <strong>4,0</strong> no Exame Final. Se NE &lt; 4,0, o estudante é reprovado no exame, independentemente da média final.
+</div>
+<div class="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+<span class="font-semibold text-slate-800 block mb-1">3. Média Final (MF)</span>
+A Média Final ponderada é calculada por: <br>
+<code class="bg-slate-200 px-1 py-0.5 rounded text-slate-800 font-mono text-[11px] mt-1 inline-block">MF = (MP × 6 + NE × 4) / 10</code><br>
+É necessário MF ≥ 6,0 para aprovação.
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-400">
+<div class="max-w-5xl mx-auto px-4">
+Ferramenta de apoio para estudantes • Confira sempre as regras de avaliação da sua disciplina.
+</div>
+</footer>
+<div class="hidden bg-blue-900 text-white shadow-sm text-slate-600 hover:bg-slate-100 hover:text-slate-900
+border bg-emerald-100 text-emerald-800 border-emerald-300 bg-emerald-50 border-emerald-200
+bg-rose-100 text-rose-800 border-rose-300 bg-rose-50 border-rose-200
+bg-amber-100 text-amber-800 border-amber-300 bg-amber-50 border-amber-200 text-amber-700 font-semibold
+bg-red-100 text-red-800 border-red-300 bg-red-50 border-red-200 border-red-400 focus:ring-red-400
+bg-blue-100 text-blue-800 border-blue-300 bg-blue-50 border-blue-200
+opacity-40 cursor-not-allowed hover:bg-red-50 hover:text-red-600 text-slate-400
+border-blue-900 bg-white text-slate-700 border-slate-200 hover:border-blue-300 hover:bg-blue-50 bg-white/15 text-blue-100
+bg-slate-100 text-slate-500 border-dashed border-slate-300 hover:border-blue-400 hover:text-blue-700 max-w-[180px] truncate
+text-emerald-600 text-red-600 shrink-0 rounded-md px-1.5 py-0.5"></div>
+<script>
+const EPS = 1e-9;
+function lerNumero(str, min = 0, max = 10) {
+const s = String(str ?? '').trim().replace(',', '.');
+if (s === '') return null;
+if (!/^\d*\.?\d+$|^\d+\.$/.test(s)) return NaN;
+const n = parseFloat(s);
+return (n < min || n > max) ? NaN : n;
+}
+const fmt = (n) => n.toFixed(2).replace('.', ',');
+const arredCima = (n) => Math.ceil(n * 100 - 1e-6) / 100;
+const arred = (n) => Math.round(n * 100 + 1e-6) / 100;
+function marcarInvalido(input, invalido) {
+input.classList.toggle('border-red-400', invalido);
+input.classList.toggle('bg-red-50', invalido);
+input.classList.toggle('border-slate-300', !invalido);
+input.setAttribute('aria-invalid', invalido ? 'true' : 'false');
+}
+const CORES = {
+verde:    { badge: 'bg-emerald-100 text-emerald-800 border-emerald-300', alerta: 'bg-emerald-50 text-emerald-800 border-emerald-200' },
+azul:     { badge: 'bg-blue-100 text-blue-800 border-blue-300',          alerta: 'bg-blue-50 text-blue-800 border-blue-200' },
+amarelo:  { badge: 'bg-amber-100 text-amber-800 border-amber-300',       alerta: 'bg-amber-50 text-amber-800 border-amber-200' },
+rosa:     { badge: 'bg-rose-100 text-rose-800 border-rose-300',          alerta: 'bg-rose-50 text-rose-800 border-rose-200' },
+vermelho: { badge: 'bg-red-100 text-red-800 border-red-300',             alerta: 'bg-red-50 text-red-800 border-red-200' },
+};
+function mostrarResultado(ids, cor, badge, titulo, valor, sub, alertaHtml) {
+const el = (id) => document.getElementById(id);
+el(ids.badge).textContent = badge;
+el(ids.badge).className = `px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide border ${CORES[cor].badge}`;
+el(ids.titulo).textContent = titulo;
+el(ids.valor).textContent = valor;
+el(ids.sub).textContent = sub;
+el(ids.alerta).className = `p-4 rounded-xl text-xs sm:text-sm leading-relaxed border ${CORES[cor].alerta}`;
+el(ids.alerta).innerHTML = alertaHtml;
+}
+const escapar = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const CHAVE = 'calculadoraDeNotas.v1';
+let proximoId = 1;
+const novaAvaliacao = (nome, tipo, peso = '1', nota = '') => ({ id: proximoId++, nome, tipo, peso, nota });
+const avaliacoesPadrao = () => [novaAvaliacao('Prova 1', 'Prova'), novaAvaliacao('Prova 2', 'Prova'), novaAvaliacao('Trabalho 1', 'Trabalho')];
+const novaMateria = (nome, avaliacoes = avaliacoesPadrao()) => ({ id: proximoId++, nome, avaliacoes });
+const NOME_PADRAO = 'Nome da matéria';
+let estado = { aba: 'semestre', materias: [novaMateria(NOME_PADRAO)], materiaAtual: null, mp: '', ne: '' };
+estado.materiaAtual = estado.materias[0].id;
+const materia = () => estado.materias.find((m) => m.id === estado.materiaAtual) || estado.materias[0];
+function lerMaterias(lista) {
+if (!Array.isArray(lista)) return [];
+return lista.filter((m) => m && Array.isArray(m.avaliacoes)).map((m) => {
+const avaliacoes = m.avaliacoes.filter((a) => a && typeof a === 'object').map((a) => novaAvaliacao(
+String(a.nome ?? '').slice(0, 40),
+a.tipo === 'Trabalho' ? 'Trabalho' : 'Prova',
+String(a.peso ?? '1').slice(0, 10),
+String(a.nota ?? '').slice(0, 10)));
+const nome = String(m.nome ?? '').trim().slice(0, 50) || 'Matéria sem nome';
+return novaMateria(nome, avaliacoes.length ? avaliacoes : avaliacoesPadrao());
+});
+}
+const materiasParaSalvar = () => estado.materias.map((m) => ({
+nome: m.nome,
+avaliacoes: m.avaliacoes.map(({ nome, tipo, peso, nota }) => ({ nome, tipo, peso, nota })),
+}));
+function carregar() {
+try {
+const salvo = JSON.parse(localStorage.getItem(CHAVE));
+if (salvo) {
+const materias = lerMaterias(salvo.materias);
+if (materias.length) {
+estado.materias = materias;
+estado.materiaAtual = (materias[salvo.materiaAtual] || materias[0]).id;
+}
+estado.aba = salvo.aba === 'exame' ? 'exame' : 'semestre';
+estado.mp = String(salvo.mp ?? '');
+estado.ne = String(salvo.ne ?? '');
+}
+} catch (e) { /* sem armazenamento: começa do padrão */ }
+}
+const statusSalvo = document.getElementById('status-salvo');
+function salvar() {
+try {
+localStorage.setItem(CHAVE, JSON.stringify({
+aba: estado.aba, mp: estado.mp, ne: estado.ne,
+materiaAtual: estado.materias.indexOf(materia()),
+materias: materiasParaSalvar(),
+}));
+statusSalvo.textContent = '✓ Salvo automaticamente';
+statusSalvo.className = 'text-xs text-emerald-600';
+} catch (e) {
+statusSalvo.textContent = 'Não foi possível salvar as notas';
+statusSalvo.className = 'text-xs text-red-600';
+}
+}
+function trocarAba(aba) {
+estado.aba = aba;
+document.querySelectorAll('.aba-btn').forEach((btn) => {
+const ativa = btn.dataset.aba === aba;
+btn.setAttribute('aria-selected', ativa);
+btn.className = `aba-btn flex-1 whitespace-nowrap py-2.5 px-2 sm:px-4 rounded-xl text-sm font-semibold transition-colors flex items-center justify-center gap-2 ${ativa ? 'bg-blue-900 text-white shadow-sm' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`;
+});
+document.getElementById('aba-semestre').classList.toggle('hidden', aba !== 'semestre');
+document.getElementById('aba-exame').classList.toggle('hidden', aba !== 'exame');
+salvar();
+}
+document.querySelectorAll('.aba-btn').forEach((btn) => btn.addEventListener('click', () => trocarAba(btn.dataset.aba)));
+const lista = document.getElementById('lista-avaliacoes');
+const CLASSE_CAMPO = 'py-2 rounded-lg border border-slate-300 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors';
+function renderizarLista() {
+lista.innerHTML = '';
+const avaliacoes = materia().avaliacoes;
+const unica = avaliacoes.length === 1;
+for (const av of avaliacoes) {
+const linha = document.createElement('div');
+linha.className = 'flex flex-wrap min-[480px]:flex-nowrap gap-2 items-center';
+linha.dataset.id = av.id;
+linha.innerHTML = `
+<input data-campo="nome" type="text" maxlength="40" aria-label="Nome da avaliação" class="w-full min-[480px]:w-auto min-[480px]:flex-1 min-w-0 px-3 ${CLASSE_CAMPO}">
+<select data-campo="tipo" aria-label="Tipo" class="flex-1 min-[480px]:flex-none min-[480px]:w-28 px-2.5 bg-white ${CLASSE_CAMPO}">
+<option>Prova</option><option>Trabalho</option>
+</select>
+<input data-campo="peso" type="text" inputmode="decimal" autocomplete="off" placeholder="1" aria-label="Peso" title="Peso na média" class="w-14 px-2 text-center ${CLASSE_CAMPO}">
+<input data-campo="nota" type="text" inputmode="decimal" autocomplete="off" placeholder="—" aria-label="Nota" class="w-[4.5rem] px-2 text-center ${CLASSE_CAMPO}">
+<button data-acao="remover" type="button" aria-label="Remover avaliação" title="Remover"
+class="w-8 h-9 shrink-0 flex items-center justify-center rounded-lg text-slate-400 transition-colors ${unica ? 'opacity-40 cursor-not-allowed' : 'hover:bg-red-50 hover:text-red-600'}" ${unica ? 'disabled' : ''}>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+</button>`;
+linha.querySelector('[data-campo="nome"]').value = av.nome;
+linha.querySelector('[data-campo="tipo"]').value = av.tipo;
+linha.querySelector('[data-campo="peso"]').value = av.peso;
+linha.querySelector('[data-campo="nota"]').value = av.nota;
+lista.appendChild(linha);
+}
+calcularSemestre();
+}
+lista.addEventListener('input', (e) => {
+const linha = e.target.closest('[data-id]');
+const campo = e.target.dataset.campo;
+if (!linha || !campo) return;
+const av = materia().avaliacoes.find((a) => a.id === Number(linha.dataset.id));
+av[campo] = e.target.value;
+calcularSemestre();
+});
+lista.addEventListener('click', (e) => {
+const btn = e.target.closest('[data-acao="remover"]');
+const m = materia();
+if (!btn || m.avaliacoes.length <= 1) return;
+const id = Number(btn.closest('[data-id]').dataset.id);
+m.avaliacoes = m.avaliacoes.filter((a) => a.id !== id);
+renderizarLista();
+});
+function adicionar(tipo) {
+const avaliacoes = materia().avaliacoes;
+const n = avaliacoes.filter((a) => a.tipo === tipo).length + 1;
+avaliacoes.push(novaAvaliacao(`${tipo} ${n}`, tipo));
+renderizarLista();
+const campos = lista.querySelectorAll('[data-campo="nota"]');
+campos[campos.length - 1].focus();
+}
+document.getElementById('btn-add-prova').addEventListener('click', () => adicionar('Prova'));
+document.getElementById('btn-add-trabalho').addEventListener('click', () => adicionar('Trabalho'));
+document.getElementById('btn-limpar-notas').addEventListener('click', () => {
+materia().avaliacoes.forEach((a) => { a.nota = ''; });
+renderizarLista();
+});
+const listaMaterias = document.getElementById('lista-materias');
+const inputNomeMateria = document.getElementById('nome-materia');
+const ICONE_PASTA = '<svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" /></svg>';
+function renderizarMaterias() {
+listaMaterias.innerHTML = '';
+for (const m of estado.materias) {
+const ativa = m.id === materia().id;
+const r = resumo(m.avaliacoes);
+const media = r.somaPesosLancados > 0 ? fmt(arred(r.somaPonderada / r.somaPesosLancados)) : '—';
+const chip = document.createElement('button');
+chip.type = 'button';
+chip.dataset.materia = m.id;
+chip.title = r.pendentes === 0 && r.lancadas > 0 ? 'Média final do semestre' : 'Média das notas lançadas até agora';
+chip.className = `flex items-center gap-2 px-3 py-2 rounded-xl border text-sm font-medium transition-colors ${ativa ? 'bg-blue-900 text-white border-blue-900' : 'bg-white text-slate-700 border-slate-200 hover:border-blue-300 hover:bg-blue-50'}`;
+chip.innerHTML = `${ICONE_PASTA}<span class="max-w-[180px] truncate">${escapar(m.nome || 'Matéria sem nome')}</span>`
++ `<span class="text-xs px-1.5 py-0.5 rounded-md ${ativa ? 'bg-white/15 text-blue-100' : 'bg-slate-100 text-slate-500'}">${media}</span>`;
+listaMaterias.appendChild(chip);
+}
+const nova = document.createElement('button');
+nova.type = 'button';
+nova.dataset.acao = 'nova';
+nova.className = 'flex items-center gap-1.5 px-3 py-2 rounded-xl border border-dashed border-slate-300 text-sm font-medium text-slate-500 hover:border-blue-400 hover:text-blue-700 transition-colors';
+nova.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>Nova matéria';
+listaMaterias.appendChild(nova);
+}
+function abrirMateria(id) {
+estado.materiaAtual = id;
+inputNomeMateria.value = materia().nome;
+renderizarLista(); // também recalcula, salva e redesenha as matérias
+}
+listaMaterias.addEventListener('click', (e) => {
+if (e.target.closest('[data-acao="nova"]')) {
+const m = novaMateria('Nova matéria');
+estado.materias.push(m);
+abrirMateria(m.id);
+inputNomeMateria.focus();
+inputNomeMateria.select();
+return;
+}
+const chip = e.target.closest('[data-materia]');
+if (chip) abrirMateria(Number(chip.dataset.materia));
+});
+inputNomeMateria.addEventListener('input', () => {
+materia().nome = inputNomeMateria.value;
+renderizarMaterias();
+salvar();
+});
+inputNomeMateria.addEventListener('blur', () => {
+if (inputNomeMateria.value.trim()) return;
+materia().nome = inputNomeMateria.value = 'Matéria sem nome';
+renderizarMaterias();
+salvar();
+});
+inputNomeMateria.addEventListener('keydown', (e) => { if (e.key === 'Enter') inputNomeMateria.blur(); });
+document.getElementById('btn-excluir-materia').addEventListener('click', () => {
+const m = materia();
+if (!confirm(`Excluir a matéria "${m.nome}" e todas as notas dela?`)) return;
+estado.materias = estado.materias.filter((x) => x.id !== m.id);
+if (!estado.materias.length) estado.materias.push(novaMateria(NOME_PADRAO));
+abrirMateria(estado.materias[0].id);
+});
+const IDS_SEM = { badge: 'sem-badge', titulo: 'sem-destaque-titulo', valor: 'sem-destaque-valor', sub: 'sem-destaque-sub', alerta: 'sem-alerta' };
+let mediaParaExame = null;
+function resumo(avaliacoes) {
+const r = { somaPesos: 0, somaPesosLancados: 0, somaPonderada: 0, lancadas: 0, pendentes: 0, invalidas: 0, itens: [] };
+for (const av of avaliacoes) {
+let peso = lerNumero(av.peso, 0, 100);
+if (peso === null) peso = 1;               // peso em branco vale 1
+const pesoOk = !Number.isNaN(peso) && peso > 0;
+const nota = lerNumero(av.nota);
+const notaOk = !Number.isNaN(nota);
+const item = { av, peso, pesoOk, notaOk, status: 'invalida' };
+r.itens.push(item);
+if (!pesoOk || !notaOk) { r.invalidas++; continue; }
+r.somaPesos += peso;
+if (nota === null) {
+item.status = 'pendente';
+r.pendentes++;
+} else {
+item.status = 'lancada';
+r.lancadas++;
+r.somaPesosLancados += peso;
+r.somaPonderada += nota * peso;
+}
+}
+return r;
+}
+function calcularSemestre() {
+const r = resumo(materia().avaliacoes);
+const { somaPesos, somaPesosLancados, somaPonderada, invalidas } = r;
+const linhas = [...lista.children];
+const pendentes = [];
+r.itens.forEach((item, i) => {
+const inPeso = linhas[i].querySelector('[data-campo="peso"]');
+const inNota = linhas[i].querySelector('[data-campo="nota"]');
+marcarInvalido(inPeso, !item.pesoOk);
+marcarInvalido(inNota, !item.notaOk);
+inNota.placeholder = '—';
+if (item.status === 'pendente') pendentes.push({ av: item.av, peso: item.peso, input: inNota });
+});
+salvar();
+renderizarMaterias();
+const vazio = document.getElementById('sem-vazio');
+const conteudo = document.getElementById('sem-conteudo');
+const btnExame = document.getElementById('btn-ir-exame');
+btnExame.classList.add('hidden');
+mediaParaExame = null;
+if (somaPesos === 0) {
+vazio.classList.remove('hidden');
+conteudo.classList.add('hidden');
+return;
+}
+vazio.classList.add('hidden');
+conteudo.classList.remove('hidden');
+const total = r.lancadas + pendentes.length;
+const mediaAtual = somaPesosLancados > 0 ? somaPonderada / somaPesosLancados : null;
+const pesoPendente = somaPesos - somaPesosLancados;
+const maxPossivel = (somaPonderada + 10 * pesoPendente) / somaPesos;
+document.getElementById('sem-stat-atual').textContent = mediaAtual === null ? '—' : fmt(arred(mediaAtual));
+document.getElementById('sem-stat-lancadas').textContent = `${r.lancadas} de ${total}`;
+document.getElementById('sem-stat-max').textContent = fmt(arred(maxPossivel));
+const avisoInvalidas = invalidas > 0
+? `<br><span class="font-semibold">* ${invalidas} avaliação(ões) com valor inválido foram ignoradas (notas de 0 a 10; peso maior que 0).</span>`
+: '';
+if (pendentes.length === 0) {
+const mp = somaPonderada / somaPesos;
+if (mp >= 7 - EPS) {
+mostrarResultado(IDS_SEM, 'verde', 'Aprovado Direto', 'Média Parcial (MP)', fmt(arred(mp)), 'Média ≥ 7,0, sem exame',
+`<strong>Parabéns!</strong> Sua média no semestre é <strong>${fmt(arred(mp))}</strong>, igual ou acima de 7,0. Você está aprovado sem precisar fazer o Exame Final.${avisoInvalidas}`);
+} else {
+mediaParaExame = arred(mp);
+btnExame.classList.remove('hidden');
+mostrarResultado(IDS_SEM, 'amarelo', 'Exame Necessário', 'Média Parcial (MP)', fmt(arred(mp)), 'Abaixo de 7,0: vai para o Exame Final',
+`Sua média no semestre ficou em <strong>${fmt(arred(mp))}</strong>, abaixo de 7,0. Você precisa fazer o Exame Final. Clique abaixo para ver quanto precisa tirar nele.${avisoInvalidas}`);
+}
+return;
+}
+const necessaria = (7 * somaPesos - somaPonderada) / pesoPendente;
+const nomes = pendentes.map((p) => `<strong>${escapar(p.av.nome || p.av.tipo)}</strong>`);
+const listaNomes = nomes.length === 1 ? nomes[0] : `${nomes.slice(0, -1).join(', ')} e ${nomes[nomes.length - 1]}`;
+const uma = pendentes.length === 1;
+const titulo = uma ? `Precisa tirar em ${pendentes[0].av.nome || pendentes[0].av.tipo}` : 'Precisa tirar em cada pendente';
+if (necessaria <= EPS) {
+mostrarResultado(IDS_SEM, 'verde', 'Aprovação Garantida', titulo, '0,00', 'Média 7,0 já garantida',
+`Mesmo tirando zero em ${listaNomes}, sua média fica em pelo menos <strong>${fmt(arred(somaPonderada / somaPesos))}</strong>. A aprovação direta já está garantida.${avisoInvalidas}`);
+} else if (necessaria > 10 + EPS) {
+mostrarResultado(IDS_SEM, 'rosa', 'Exame Provável', titulo, '> 10', 'Não é possível chegar a 7,0',
+`Mesmo tirando <strong>10</strong> em ${listaNomes}, sua média máxima seria <strong>${fmt(arred(maxPossivel))}</strong>, abaixo de 7,0. Você deve ir para o Exame Final, então capriche para chegar com a maior média possível.${avisoInvalidas}`);
+} else {
+const valor = arredCima(necessaria);
+pendentes.forEach((p) => { p.input.placeholder = `≥ ${fmt(valor)}`; });
+const extra = uma ? '' :
+`<br><br>Esse é o valor se você tirar a mesma nota em todas. Se for melhor em uma, pode tirar menos em outra${pendentes.some((p) => p.peso !== pendentes[0].peso) ? ' (as de peso maior contam mais)' : ''}.`;
+const cor = valor >= 9 ? 'rosa' : valor >= 7 ? 'amarelo' : 'azul';
+mostrarResultado(IDS_SEM, cor, 'Em Andamento', titulo, fmt(valor), 'Para fechar o semestre com média 7,0',
+`Para ser aprovado direto (média ≥ 7,0), você precisa tirar no mínimo <strong>${fmt(valor)}</strong> ${uma ? 'em' : 'em cada uma destas:'} ${listaNomes}.${extra}${avisoInvalidas}`);
+}
+}
+document.getElementById('btn-ir-exame').addEventListener('click', () => {
+if (mediaParaExame === null) return;
+inputMP.value = fmt(mediaParaExame);
+inputNE.value = '';
+calcularExame();
+trocarAba('exame');
+inputNE.focus();
+});
+const inputMP = document.getElementById('mp');
+const inputNE = document.getElementById('ne');
+const IDS_EXAME = { badge: 'badge-status', titulo: 'titulo-nota-destaque', valor: 'valor-nota-destaque', sub: 'subtexto-nota-destaque', alerta: 'alerta-mensagem' };
+function exameVazio(titulo, texto) {
+document.getElementById('resultado-vazio').classList.remove('hidden');
+document.getElementById('resultado-conteudo').classList.add('hidden');
+document.getElementById('resultado-vazio-titulo').textContent = titulo;
+document.getElementById('resultado-vazio-texto').textContent = texto;
+}
+function calcularExame() {
+estado.mp = inputMP.value;
+estado.ne = inputNE.value;
+salvar();
+const mp = lerNumero(inputMP.value);
+const ne = lerNumero(inputNE.value);
+marcarInvalido(inputMP, Number.isNaN(mp));
+marcarInvalido(inputNE, Number.isNaN(ne));
+if (Number.isNaN(mp) || Number.isNaN(ne)) {
+exameVazio('Valor inválido', 'As notas devem estar entre 0 e 10 (ex.: 5,5 ou 5.5).');
+return;
+}
+if (mp === null) {
+exameVazio('Aguardando dados', 'Preencha ao menos a Média Parcial (MP) para visualizar seu status e simulador.');
+return;
+}
+document.getElementById('resultado-vazio').classList.add('hidden');
+document.getElementById('resultado-conteudo').classList.remove('hidden');
+if (mp >= 7 - EPS) {
+mostrarResultado(IDS_EXAME, 'verde', 'Aprovado Direto', 'Média Parcial (MP)', fmt(mp), 'Você atingiu o requisito para aprovação direta!',
+`<strong>Parabéns!</strong> Como sua Média Parcial (<strong>${fmt(mp)}</strong>) é maior ou igual a 7,0, você já está aprovado no componente curricular sem necessidade de prestar Exame Final.`);
+return;
+}
+if (ne === null) {
+let neMin = arredCima((60 - mp * 6) / 4);
+const pisoAplicado = neMin < 4;
+if (pisoAplicado) neMin = 4;
+if (neMin > 10 + EPS) {
+mostrarResultado(IDS_EXAME, 'rosa', 'Situação Crítica', 'NE Necessária', '> 10', 'Matematicamente indisponível',
+`Com uma Média Parcial de <strong>${fmt(mp)}</strong>, mesmo tirando nota máxima (10,0) no Exame Final, a Média Final máxima atingível seria <strong>${fmt(arred((mp * 6 + 40) / 10))}</strong>, não atingindo o mínimo de 6,0.`);
+} else {
+mostrarResultado(IDS_EXAME, 'amarelo', 'Exame Necessário', 'Nota Mínima no Exame (NE)', fmt(neMin),
+pisoAplicado ? 'Nota ajustada ao piso mínimo de 4,0 do Exame' : 'Nota para obter Média Final = 6,0',
+`Para alcançar a Média Final de aprovação (6,0), você precisa tirar no mínimo <strong>${fmt(neMin)}</strong> no Exame Final.
+${pisoAplicado ? '<br><span class="text-amber-700 font-semibold">* Pela regra de avaliação, o exame exige nota mínima de 4,0, mesmo que o cálculo matemático resultasse em valor menor.</span>' : ''}`);
+}
+return;
+}
+const mf = (mp * 6 + ne * 4) / 10;
+if (ne < 4 - EPS) {
+mostrarResultado(IDS_EXAME, 'vermelho', 'Reprovado no Exame', 'Média Final Calculada', fmt(arred(mf)), 'Nota do exame abaixo do piso exigido',
+`<strong>Atenção ao Piso Mínimo!</strong> A sua nota no Exame Final foi <strong>${fmt(ne)}</strong>, que é inferior ao piso obrigatório de <strong>4,0</strong>.
+<br><br>Pela regra de avaliação, obter NE &lt; 4,0 resulta em reprovação automática no componente curricular, independentemente da Média Final atingida.`);
+} else if (mf >= 6 - EPS) {
+mostrarResultado(IDS_EXAME, 'verde', 'Aprovado', 'Média Final (MF)', fmt(arred(mf)), 'Aprovado com Exame Final',
+`<strong>Aprovado!</strong> Sua Média Final é <strong>${fmt(arred(mf))}</strong> (≥ 6,0) e sua nota no exame de <strong>${fmt(ne)}</strong> cumpriu o piso mínimo exigido de 4,0.`);
+} else {
+mostrarResultado(IDS_EXAME, 'rosa', 'Reprovado', 'Média Final (MF)', fmt(arred(mf)), 'Abaixo da média mínima 6,0',
+`<strong>Reprovado.</strong> Embora sua nota no Exame Final (<strong>${fmt(ne)}</strong>) tenha satisfeito o piso mínimo de 4,0, a Média Final alcançada (<strong>${fmt(arred(mf))}</strong>) ficou abaixo do mínimo exigido de 6,0.`);
+}
+}
+inputMP.addEventListener('input', calcularExame);
+inputNE.addEventListener('input', calcularExame);
+document.getElementById('btn-limpar').addEventListener('click', () => {
+inputMP.value = '';
+inputNE.value = '';
+calcularExame();
+inputMP.focus();
+});
+const btnInstalar = document.getElementById('btn-instalar');
+let pedidoInstalacao = null;
+const mostrarInstalar = (mostrar) => {
+btnInstalar.classList.toggle('hidden', !mostrar);
+btnInstalar.classList.toggle('flex', mostrar);
+};
+window.addEventListener('beforeinstallprompt', (e) => {
+e.preventDefault();
+pedidoInstalacao = e;
+mostrarInstalar(true);
+});
+btnInstalar.addEventListener('click', async () => {
+if (!pedidoInstalacao) return;
+pedidoInstalacao.prompt();
+await pedidoInstalacao.userChoice;
+pedidoInstalacao = null;
+mostrarInstalar(false);
+});
+window.addEventListener('appinstalled', () => mostrarInstalar(false));
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+navigator.serviceWorker.register('sw.js').catch(() => { /* sem modo offline */ });
+}
+carregar();
+inputMP.value = estado.mp;
+inputNE.value = estado.ne;
+inputNomeMateria.value = materia().nome;
+renderizarLista();
+calcularExame();
+trocarAba(estado.aba);
+</script>
+</body>
+</html>
